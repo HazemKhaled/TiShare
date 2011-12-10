@@ -1,0 +1,5 @@
+0.1
+- add share support for facebook, twitter, mail and sms by using omorandi sms dialog module for IOS and
+- Support Facebook & Twitter share url schema
+- Support Facebook & Twitter web share
+- add enable and disable interface for services
