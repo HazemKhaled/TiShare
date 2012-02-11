@@ -5,7 +5,7 @@ How To ?
 	it's easy, see app.js to know how to use it, but I'll add usage guide
 
 Tested on
-- Titanium SDK 1.7.5
+- Titanium SDK 1.7.5 (sms module will not work on 1.8.x)
 - IOS SDK 5.0 and 4.3
 - Android SDK Revision 15, Platform 2.3.3
 
