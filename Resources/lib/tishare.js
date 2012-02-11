@@ -120,7 +120,7 @@ var shareOptions = function(prams) {
 		if(services[key].callback) {
 
 			services[key].callback(prams)
-		} else if(Ti.Platform.canOpenURL(services[key].appScheme)) {
+		} else if(Ti.Platform.osname != 'android' && Ti.Platform.canOpenURL(services[key].appScheme)) {
 
 			Ti.Platform.openURL(services[key].appScheme + prams.text);
 		} else {
