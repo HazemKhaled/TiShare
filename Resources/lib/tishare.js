@@ -40,7 +40,8 @@ var services = {
 				var tf = Ti.UI.createTextField({
 					top : '10dp',
 					width : '200dp',
-					height : '40dp'
+					height : '40dp',
+					hintText : 'To ?'
 				});
 				win.add(tf);
 
@@ -59,7 +60,27 @@ var services = {
 					var smsMod = require('com.omorandi');
 					var sms = smsMod.createSms({
 						recipient : tf.value,
-						messageBody : "Test sms"
+						messageBody : prams.smsBody
+					});
+
+					sms.addEventListener('complete', function(e) {
+
+						if(e.result == sms.SENT) {
+							Ti.UI.createAlertDialog({
+								title : 'Message Sent.',
+								buttonNames : ['Ok']
+							}).show();
+						} else if(e.result == sms.FAILED) {
+							Ti.UI.createAlertDialog({
+								title : 'Message Error.',
+								buttonNames : ['Ok']
+							}).show();
+						} else if(e.result == sms.CANCELLED) {
+							/*Ti.UI.createAlertDialog({
+							 title : 'Message Sent.'
+							 }).show();*/
+						}
+						win.close();
 					});
 
 					sms.send();
